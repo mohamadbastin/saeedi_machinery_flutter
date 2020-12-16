@@ -51,7 +51,7 @@ class _FeaturedState extends State<Featured> {
                   Expanded(
                       child: Container(
                         alignment: Alignment.center,
-                        child: Text("Cranes", style: TextStyle(fontFamily: FontNameDefault, fontSize: 18, color: MyWhite,)),
+                        child: Text("Featured", style: TextStyle(fontFamily: FontNameDefault, fontSize: 18, color: MyWhite,)),
                       )
                   ),
 
@@ -71,7 +71,6 @@ class _FeaturedState extends State<Featured> {
                     List<Product> p = [];
                     for (int i = 0; i < snapshot.data.length; i++){
                       p.add(new Product(snapshot.data[i]['id'], snapshot.data[i]['attributes'], snapshot.data[i]['images']));
-                      print (p.length);
                     }
                     FeaturedLocal = products;
                     return ListView(

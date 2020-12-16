@@ -17,6 +17,8 @@ const Color MyBlack = Color(0xFF343434);
 
 Future<List> FeaturedLocal;
 
+Product selectedProduct;
+
 const String FontNameDefault = "Poppins";
 
 const MedWhiteLightText = TextStyle(

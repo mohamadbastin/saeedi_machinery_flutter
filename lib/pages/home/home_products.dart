@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:saeedi_machinery/components/category_card.dart';
 import 'package:saeedi_machinery/components/products_card.dart';
+import 'package:saeedi_machinery/models/category.dart';
 import 'package:saeedi_machinery/models/product.dart';
 import 'package:saeedi_machinery/style.dart';
 
@@ -69,7 +70,7 @@ class _HomeProductsState extends State<HomeProducts> {
                   Expanded(
                       child: Container(
                         alignment: Alignment.center,
-                        child: Text("Cranes", style: TextStyle(fontFamily: FontNameDefault, fontSize: 18, color: MyWhite,)),
+                        child: Text((widget.categoryId == -10) ? "Products" : Category.getCategoryName(widget.categoryId ) , style: TextStyle(fontFamily: FontNameDefault, fontSize: 18, color: MyWhite,)),
                       )
                   ),
 
@@ -90,7 +91,6 @@ class _HomeProductsState extends State<HomeProducts> {
                   List<Product> p = [];
                   for (int i = 0; i < snapshot.data.length; i++){
                     p.add(new Product(snapshot.data[i]['id'], snapshot.data[i]['attributes'], snapshot.data[i]['images']));
-                    print (p.length);
                   }
                   return ListView(
                       padding: EdgeInsets.fromLTRB(0, 4, 0, 18),

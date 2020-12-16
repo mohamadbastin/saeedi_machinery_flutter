@@ -24,5 +24,15 @@ class Category {
 
   }
 
+  static String getCategoryName(int catId){
+    List cat = fetchAll();
+    for(int i = 0; i< cat.length ; i++) {
+      if (cat[i].id == catId){
+        return cat[i].name;
+      }
+    }
+    return "";
+  }
+
 
 }
