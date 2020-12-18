@@ -46,7 +46,7 @@ class CategoryCard extends StatelessWidget {
                   height: 40,
                   alignment: Alignment.center,
                   padding: EdgeInsets.fromLTRB(0, 12, 0, 12),
-                  color: Colors.orange,
+                  color: MyDarkOrange,
                   child: Text(_name, style: TextStyle(fontWeight: FontWeight.w300, fontFamily: FontNameDefault, fontSize: 14, color: MyWhite,), ),
                 )
             ),

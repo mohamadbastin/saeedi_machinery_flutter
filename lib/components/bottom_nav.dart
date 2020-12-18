@@ -58,7 +58,7 @@ class _NavBarState extends State<NavBar> {
         });
       },
       child: Container(
-        padding: const EdgeInsets.fromLTRB(24, 8, 24, 32),
+        padding: const EdgeInsets.fromLTRB(24, 12, 24, 32),
         height: 80,
         width: MediaQuery.of(context).size.width/_iconList.length,
 

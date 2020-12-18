@@ -97,7 +97,7 @@ class HomeCategory extends StatelessWidget{
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(2)),
-                            color: MyOrange,
+                            color: MyDarkOrange,
                           ),
                           margin: EdgeInsets.fromLTRB(18, 14, 18, 24),
                           height: 60 ,
