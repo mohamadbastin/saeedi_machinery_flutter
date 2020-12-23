@@ -29,7 +29,7 @@ class CategoryCard extends StatelessWidget {
 
             ClipRRect(
 
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(2), topRight: Radius.circular(2)),
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(4), topRight: Radius.circular(4)),
               child: Container(
                 height: 60,
                 color: MySemiLightGray,
@@ -41,7 +41,7 @@ class CategoryCard extends StatelessWidget {
 
             ClipRRect(
 
-              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(2), bottomRight: Radius.circular(2)),
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(4), bottomRight: Radius.circular(4)),
               child: Container (
                   height: 40,
                   alignment: Alignment.center,

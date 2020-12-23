@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:saeedi_machinery/style.dart';
 
 class Profile extends StatelessWidget {
   // This widget is the root of your application.
@@ -7,7 +8,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      color: Colors.redAccent,
+      color: MyDarkOrange,
     );
 
   }

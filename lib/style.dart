@@ -17,7 +17,11 @@ const Color MyBlack = Color(0xFF343434);
 
 Future<List> FeaturedLocal;
 
-Product selectedProduct;
+Product selectedProduct, featuredProduct;
+
+int FeaturedState = 0;
+
+String SearchKeyWord;
 
 const String FontNameDefault = "Poppins";
 

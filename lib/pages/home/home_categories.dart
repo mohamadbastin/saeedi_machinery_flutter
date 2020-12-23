@@ -47,6 +47,10 @@ class HomeCategory extends StatelessWidget{
               margin: EdgeInsets.fromLTRB(18, 14, 18, 18),
               child: TextField(
                 textInputAction: TextInputAction.search,
+                onSubmitted: (val){
+                  SearchKeyWord = val;
+                  this.onItemTap(1, -8);
+                },
                 cursorColor: MySemiLightGray,
                 decoration: InputDecoration(
                   hintText: 'Search Keyword',

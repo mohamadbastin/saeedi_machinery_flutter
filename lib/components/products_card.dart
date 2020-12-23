@@ -29,7 +29,7 @@ class ProductCard extends StatelessWidget {
 
               ClipRRect(
 
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(2), bottomLeft: Radius.circular(2)),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(4), bottomLeft: Radius.circular(4)),
                   child: Container(
                     width: 140,
                     color: MySemiLightGray,

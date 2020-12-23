@@ -8,6 +8,8 @@ import 'package:saeedi_machinery/pages/home/home_categories.dart';
 import 'package:saeedi_machinery/pages/home/home_products.dart';
 import 'package:saeedi_machinery/style.dart';
 
+import 'home_product_details.dart';
+
 
 class Home extends StatefulWidget {
 
@@ -57,6 +59,12 @@ class _HomeState extends State<Home> {
         });
 
       }, _catId);
+
+      case 2 : return HomeProductDetails((index){
+        setState(() {
+          _selectedItem = index;
+        });
+      });
 
     }
 

@@ -24,12 +24,14 @@ class HomeProducts extends StatefulWidget{
 
 
 class _HomeProductsState extends State<HomeProducts> {
+
   Future<List> products;
 
 
   @override
   void initState() {
     products = getProducts();
+
     super.initState();
   }
 
@@ -70,7 +72,7 @@ class _HomeProductsState extends State<HomeProducts> {
                   Expanded(
                       child: Container(
                         alignment: Alignment.center,
-                        child: Text((widget.categoryId == -10) ? "Products" : Category.getCategoryName(widget.categoryId ) , style: TextStyle(fontFamily: FontNameDefault, fontSize: 18, color: MyWhite,)),
+                        child: Text((widget.categoryId  < 0) ? "Products" : Category.getCategoryName(widget.categoryId ) , style: TextStyle(fontFamily: FontNameDefault, fontSize: 18, color: MyWhite,)),
                       )
                   ),
 
@@ -95,7 +97,10 @@ class _HomeProductsState extends State<HomeProducts> {
                   return ListView(
                       padding: EdgeInsets.fromLTRB(0, 4, 0, 18),
                       children: p.map((product) => GestureDetector(
-                          onTap: (){},
+                          onTap: (){
+                            selectedProduct = product;
+                            this.widget.onItemTap(2);
+                          },
                           child: ProductCard(0,product.brand, product.model, product.year, product.assetType, product.imgs[0]['src'] )
                       ),
                       ).toList()
@@ -139,10 +144,13 @@ class _HomeProductsState extends State<HomeProducts> {
     dio.options.headers["authorization"] = "Basic Y2tfNjI1MjU4NjJjOGZlNzg2ZWY3NTFmMzBlMzE1NjRmMmNkMjc3YjQzZTpjc18xNGE0YTBlYjU4MmRhNTZlZTg2ZjIwYjljZTRlMWJmNTUzMjdlYzA1";
     Response response;
     if (widget.categoryId == -10 ){
-      response = await dio.get(url, queryParameters: {"per_page" : "100"});
+      response = await dio.get(url, queryParameters: {"per_page" : "10"});
+    }
+    else if(widget.categoryId == -8){
+      response = await dio.get(url, queryParameters: {"search" : SearchKeyWord, "per_page" : "10"});
     }
     else{
-      response = await dio.get(url, queryParameters: {"category": widget.categoryId, "per_page" : "100"});
+      response = await dio.get(url, queryParameters: {"category": widget.categoryId, "per_page" : "10"});
     }
 
     return response.data;
